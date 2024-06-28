@@ -6,6 +6,9 @@ on:
 env:
   EKS_CLUSTER_NAME: team1-eks-cluster
   AWS_REGION: eu-central-1
+  PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  HOSTNAME: ${{secrets.SSH_HOST}}
+  USER_NAME: ${{secrets.USER_NAME}}
 
 jobs:
   docker:
@@ -39,28 +42,17 @@ jobs:
             push: true
             tags: |
               saurabhd2106/backend:latest
-              saurabhd2106/backend:1.0.0  
-      
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{env.AWS_REGION}}
-
-      - name: Update kube config
-        run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+              saurabhd2106/backend:1.0.0
     
-      - name: Deploy to EKS
+      - name: Deploy application
         run: |
-            kubectl apply -f ./namespace.yml
-            kubectl apply -f ./db_deploy.yml
-            kubectl apply -f ./db_clusterip.yml
-            kubectl apply -f ./backend_deploy.yml
-            kubectl apply -f ./loadbalancer_backend.yml
-            kubectl apply -f ./frontend_deploy.yml
-            kubectl apply -f ./loadbalancer_frontend.yml
-    
+            echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+            ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            
+            
+                cd /home/ubuntu/<PROJECT_DIRECTORY> &&
+                git checkout dev &&
+                git fetch --all &&
+                git reset --hard origin/dev &&
+                git pull origin dev &&
+                sudo docker compose up -d
