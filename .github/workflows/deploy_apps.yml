@@ -40,7 +40,7 @@ jobs:
             tags: |
               saurabhd2106/backend:latest
               saurabhd2106/backend:1.0.0  
-              
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -53,11 +53,11 @@ jobs:
     
       - name: Deploy to EKS
         run: |
-            kubectl apply -f namespace.yml
-            kubectl apply -f db_deploy.yml
-            kubectl apply -f db_clusterip.yml
-            kubectl apply -f backend_deploy.yml
-            kubectl apply -f loadbalancer_backend.yml
-            kubectl apply -f frontend_deploy.yml
-            kubectl apply -f loadbalancer_frontend.yml
+            kubectl apply -f ./namespace.yml
+            kubectl apply -f ./db_deploy.yml
+            kubectl apply -f ./db_clusterip.yml
+            kubectl apply -f ./backend_deploy.yml
+            kubectl apply -f ./loadbalancer_backend.yml
+            kubectl apply -f ./frontend_deploy.yml
+            kubectl apply -f ./loadbalancer_frontend.yml
     
