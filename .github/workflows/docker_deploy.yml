@@ -11,16 +11,17 @@ env:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    steps:    
+    steps:
+      - uses: actions/checkout@v2    
       - name: Deploy application
         run: |
             echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
             ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
             
-                git checkout dev &&
+                git checkout main &&
                 git fetch --all &&
-                git reset --hard origin/dev &&
-                git pull origin dev &&
+                git reset --hard origin/main &&
+                git pull origin main &&
                 cd /home/ubuntu/3_tier_app_solution_k8s &&
                 sudo docker compose up -d
                 '
