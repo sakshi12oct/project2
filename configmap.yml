@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-configmap
+  namespace: mynamespace-saurabh
+data:
+  config.json: |
+    {
+      "API_URL": "http://a481162ca99164d8fad1a08bdb6fcbda-431962656.eu-central-1.elb.amazonaws.com/"
+    }
+    

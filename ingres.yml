@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: mynamespace-saurabh
+  annotations:
+spec:
+  ingressClassName: 'nginx'
+  rules:
+  - http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: loadbalancer-service
+            port:
+              number: 80
+      - path: /backend/*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: lb-backend-service
+            port:
+              number: 80
