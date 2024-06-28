@@ -32,9 +32,7 @@ services:
 
   # # .NET Core WebAPI Service
   webapi:
-    build:
-      context: ./api
-      dockerfile: Dockerfile
+    image: saurabhd2106/backend:latest
     container_name: basic-3tier-api
     ports:
       - "7000:80"
@@ -47,9 +45,7 @@ services:
 
   # Frontend Application
   frontend:
-    build:
-      context: ./ui
-      dockerfile: Dockerfile
+    image: saurabhd2106/frontend:latest
     container_name: basic-3tier-ui
     ports:
       - "5000:80"
