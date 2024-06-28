@@ -17,11 +17,10 @@ jobs:
             echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
             ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
             
-            
-                cd /home/ubuntu/3_tier_app_solution_k8s &&
                 git checkout dev &&
                 git fetch --all &&
                 git reset --hard origin/dev &&
                 git pull origin dev &&
+                cd /home/ubuntu/3_tier_app_solution_k8s &&
                 sudo docker compose up -d
                 '
