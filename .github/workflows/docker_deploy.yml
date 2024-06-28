@@ -18,7 +18,7 @@ jobs:
             ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
             
             
-                cd /home/ubuntu/3-tier-project &&
+                cd /home/ubuntu/3_tier_app_solution_k8s &&
                 git checkout dev &&
                 git fetch --all &&
                 git reset --hard origin/dev &&
