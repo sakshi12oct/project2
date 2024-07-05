@@ -3,7 +3,7 @@ name: Push Frontend and Backend image to Docker HUb
 on:
   push:
     branches:
-      - 'dev'
+      - 'main'
 
 env:
   EKS_CLUSTER_NAME: team1-eks-cluster
@@ -37,7 +37,7 @@ jobs:
       - name: Build and push backend
         uses: docker/build-push-action@v6
         with:
-            file: ./api/Dockerfile
+            context: ./api
             push: true
             tags: |
               saurabhd2106/backend:latest
