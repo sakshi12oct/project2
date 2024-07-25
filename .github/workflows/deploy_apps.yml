@@ -3,7 +3,7 @@ name: Push Frontend and Backend image to Docker HUb
 on:
   push:
     branches:
-      - 'main'
+      - 'dev'
 
 env:
   EKS_CLUSTER_NAME: team1-eks-cluster
