@@ -39,7 +39,8 @@ jobs:
         #docker push ${{ secrets.DOCKER_USERNAME }}/worker:${{ github.sha }}
   
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    needs: build
 
     steps:
     # Step 1: Checkout code
