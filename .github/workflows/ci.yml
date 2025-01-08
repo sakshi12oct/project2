@@ -78,9 +78,10 @@ jobs:
       
       run: |
           ssh -i ~/.ssh/new-my-kp.pem ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
-            rm -rf 3_tier_app_solution_k8s
-            git clone https://github.com/saurabhd2106/3_tier_app_solution_k8s.git
-            cd 3_tier_app_solution_k8s
+            rm -rf project2
+            git clone https://github.com/sakshi12oct/project2.git
+            
+            cd project2
           EOF
 
            
