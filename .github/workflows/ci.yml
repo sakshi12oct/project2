@@ -47,13 +47,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     # Step 2: Install AWS CLI
-    - name: Install AWS CLI
-      run: |
-        sudo apt-get update
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        unzip awscliv2.zip
-        sudo ./aws/install
-        aws --version
+    #- name: Install AWS CLI
+      #run: |
+        #sudo apt-get update
+        #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        #unzip awscliv2.zip
+        #sudo ./aws/install
+        #aws --version
         
     - name: Update kubeconfig
       run: aws eks update-kubeconfig --region ap-south-1 --name my-cluster
