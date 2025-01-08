@@ -91,5 +91,6 @@ jobs:
           kubectl apply -f ./db_clusterip.yml
           kubectl apply -f ./backend_deploy.yml
           kubectl apply -f ./loadbalancer_backend.yml
+          kubectl apply -f ./configmap.yml
           kubectl apply -f ./frontend_deploy.yml
           kubectl apply -f ./loadbalancer_frontend.yml
