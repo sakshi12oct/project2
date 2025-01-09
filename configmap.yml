@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: frontend-configmap
-  namespace: mynamespace-saurabh
+  namespace: mynamespace-sakshi
 data:
   config.json: |
     {
