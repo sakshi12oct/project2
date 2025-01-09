@@ -4,7 +4,7 @@ metadata:
   name: backend-deploy
   labels:
     app: backend-app
-  namespace: mynamespace-saurabh
+  namespace: mynamespace-sakshi
 spec:
   replicas: 1
   selector:
