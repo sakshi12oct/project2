@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend-app
-          image: sakshisb/test-api-image
+          image: saurabhd2106/backend-3tier
           imagePullPolicy: Always
           ports:
             - containerPort: 80
