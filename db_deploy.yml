@@ -4,7 +4,7 @@ metadata:
   name: db-deploy
   labels:
     app: db-app
-  namespace: mynamespace-saurabh
+  namespace: mynamespace-sakshi
 spec:
   replicas: 1
   selector:
