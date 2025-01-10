@@ -6,6 +6,6 @@ metadata:
 data:
   config.json: |
     {
-      "API_URL": "http://ab2b09f6d29794381b306d816e787b74-1750759148.ap-south-1.elb.amazonaws.com/"
+      "API_URL": "http://a337a19f86bf6469c8efa69b28977c7a-1032624742.ap-south-1.elb.amazonaws.com/"
     }
     
