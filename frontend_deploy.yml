@@ -25,8 +25,8 @@ spec:
                 path: config.json
       containers:
         - name: frontend-app
-          image: dsunitha2/new_frontend
-          imagePullPolicy: Always
+          image: sakshisb/pro-ui:latest
+          #imagePullPolicy: Always
           ports:
             - containerPort: 80
           volumeMounts:
