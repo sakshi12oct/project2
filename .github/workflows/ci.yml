@@ -95,3 +95,4 @@ jobs:
           kubectl apply -f ./configmap.yml
           kubectl apply -f ./frontend_deploy.yml
           kubectl apply -f ./loadbalancer_frontend.yml
+#test
