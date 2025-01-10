@@ -21,8 +21,8 @@ jobs:
     # Step 3: Build Docker image
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/pro-api:${{ github.sha }} ./api
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/pro-ui:${{ github.sha }} ./ui
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/pro-api:latest ./api
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/pro-ui:latest ./ui
    
 
     # Step 4: Push Docker image to DockerHub
@@ -34,8 +34,8 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/pro-api:${{ github.sha }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/pro-ui:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/pro-api:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/pro-ui:latest
         #docker push ${{ secrets.DOCKER_USERNAME }}/worker:${{ github.sha }}
   
   deploy:
