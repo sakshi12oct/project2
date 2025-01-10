@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend-app
-          image: saurabhd2106/frontend-3tier
+          image: saurabhd2106/backend-3tier
           imagePullPolicy: Always
           ports:
             - containerPort: 80
