@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend-app
-          image: dsunitha2/new_backend
+          image: sakshisb/api-image
           imagePullPolicy: Always
           ports:
             - containerPort: 80
